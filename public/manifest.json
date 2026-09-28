@@ -1,0 +1,15 @@
+{
+    "name": "Yuvanshankar S Portfolio",
+    "short_name": "YUVAN",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FAFBFF",
+    "theme_color": "#2563EB",
+    "icons": [
+        {
+            "src": "/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
