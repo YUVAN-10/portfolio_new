@@ -1,7 +1,7 @@
-# Robots.txt for Yuvanshankar S Portfolio
-# https://yuvan-portfolio.vercel.app
+# # Robots.txt for Yuvanshankar S Portfolio
+# https://yuvanshankar.netlify.app/
 
 User-agent: *
 Allow: /
 
-Sitemap: https://yuvan-portfolio.vercel.app/sitemap.xml
+Sitemap: https://yuvanshankar.netlify.app/sitemap.xml
