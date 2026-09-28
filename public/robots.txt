@@ -1,0 +1,7 @@
+# Robots.txt for Yuvanshankar S Portfolio
+# https://yuvan-portfolio.vercel.app
+
+User-agent: *
+Allow: /
+
+Sitemap: https://yuvan-portfolio.vercel.app/sitemap.xml
