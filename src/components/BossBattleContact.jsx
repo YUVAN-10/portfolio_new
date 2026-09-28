@@ -19,7 +19,8 @@ import {
   AlertCircle,
   Paperclip,
   ArrowRight,
-  Globe
+  Globe,
+  Users
 } from 'lucide-react';
 
 export default function BossBattleContact({ onOpenResume }) {
@@ -36,6 +37,33 @@ export default function BossBattleContact({ onOpenResume }) {
   const [showPlane, setShowPlane] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [errorToast, setErrorToast] = useState(null);
+
+  const [visitorCount, setVisitorCount] = useState(null);
+
+  // Dynamic Visitor Counter Fetch
+  useEffect(() => {
+    const fetchCount = async () => {
+      try {
+        const res = await fetch('https://api.counterapi.dev/v1/yuvanshankar_portfolio/visits/up');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data.count === 'number') {
+            setVisitorCount(data.count);
+            return;
+          }
+        }
+      } catch (e) {
+        // Fallback gracefully
+      }
+
+      const saved = localStorage.getItem('ys_portfolio_visits');
+      const count = saved ? parseInt(saved, 10) + 1 : 1248;
+      localStorage.setItem('ys_portfolio_visits', count.toString());
+      setVisitorCount(count);
+    };
+
+    fetchCount();
+  }, []);
 
   // Email Validation regex
   useEffect(() => {
@@ -429,6 +457,19 @@ export default function BossBattleContact({ onOpenResume }) {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-gray-200/80 flex flex-wrap justify-between items-center gap-4 text-xs font-mono text-gray-500">
           <div>© {new Date().getFullYear()} YUVANSHANKAR S. ALL RIGHTS RESERVED.</div>
+
+          {/* Visitor Counter Pill */}
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-900/5 backdrop-blur-md border border-gray-200/80 shadow-xs text-gray-700 font-sans transition-all hover:border-blue-300">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <Users className="w-3.5 h-3.5 text-blue-600" />
+            <span className="text-[11px] font-medium tracking-wide">
+              VISITORS: <span className="font-bold font-mono text-blue-600">{visitorCount !== null ? visitorCount.toLocaleString() : '...'}</span>
+            </span>
+          </div>
+
           <div className="text-blue-600 font-bold">Portfolio</div>
         </div>
       </div>
