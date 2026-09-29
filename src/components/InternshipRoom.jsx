@@ -100,28 +100,68 @@ export default function InternshipRoom() {
 
               {activeTab === 'admin' ? (
                 <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm font-mono text-xs text-gray-800 space-y-4">
-                  <div className="flex items-center justify-between border-b border-gray-200 pb-3 text-blue-600 font-bold">
-                    <span>ADMIN DASHBOARD // PEP SOFTWARE</span>
-                    <span className="text-emerald-600 font-bold">SYS HEALTH 99.8%</span>
+                  {/* Header Row */}
+                  <div className="flex items-center justify-between border-b border-gray-200 pb-3 text-blue-600 font-bold gap-2">
+                    <span className="truncate">RMBF ERODE UNITED // ROTARY CLUB ADMIN</span>
+                    <span className="text-emerald-600 font-bold shrink-0">TERM 2 (JUL-DEC)</span>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3 text-center">
-                    <div className="p-3 bg-blue-50 rounded-xl border border-blue-200">
-                      <div className="text-gray-500 text-[10px]">TOTAL USERS</div>
-                      <div className="text-lg font-bold text-gray-900">1,420</div>
+                  {/* 5 Stats Cards Grid matching Image 1 */}
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+                    <div className="p-2.5 bg-blue-50/80 rounded-xl border border-blue-200">
+                      <div className="text-gray-500 text-[9px] font-bold uppercase">Total Members</div>
+                      <div className="text-base font-extrabold text-blue-700">64</div>
+                      <div className="text-[9px] text-blue-600 font-semibold">+64 in Term 2</div>
                     </div>
-                    <div className="p-3 bg-purple-50 rounded-xl border border-purple-200">
-                      <div className="text-gray-500 text-[10px]">ACTIVE SESSIONS</div>
-                      <div className="text-lg font-bold text-purple-700">384</div>
+                    <div className="p-2.5 bg-purple-50/80 rounded-xl border border-purple-200">
+                      <div className="text-gray-500 text-[9px] font-bold uppercase">Term 2 Meetings</div>
+                      <div className="text-base font-extrabold text-purple-700">6</div>
+                      <div className="text-[9px] text-purple-600 font-semibold">6 Completed</div>
                     </div>
-                    <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
-                      <div className="text-gray-500 text-[10px]">DB QUERIES</div>
-                      <div className="text-lg font-bold text-emerald-700">12.8k</div>
+                    <div className="p-2.5 bg-cyan-50/80 rounded-xl border border-cyan-200">
+                      <div className="text-gray-500 text-[9px] font-bold uppercase">Power Meetings</div>
+                      <div className="text-base font-extrabold text-cyan-700">5</div>
+                      <div className="text-[9px] text-cyan-600 font-semibold">Power Team</div>
+                    </div>
+                    <div className="p-2.5 bg-amber-50/80 rounded-xl border border-amber-200">
+                      <div className="text-gray-500 text-[9px] font-bold uppercase">R to R Records</div>
+                      <div className="text-base font-extrabold text-amber-700">32</div>
+                      <div className="text-[9px] text-amber-600 font-semibold">Interactions</div>
+                    </div>
+                    <div className="p-2.5 bg-emerald-50/80 rounded-xl border border-emerald-200 col-span-2 sm:col-span-1">
+                      <div className="text-gray-500 text-[9px] font-bold uppercase">Total Visitors</div>
+                      <div className="text-base font-extrabold text-emerald-700">4</div>
+                      <div className="text-[9px] text-emerald-600 font-semibold">All Records</div>
                     </div>
                   </div>
 
-                  <div className="p-3 bg-gray-50 rounded-xl text-[11px] text-gray-700 border border-gray-200">
-                    <code>&gt; GET /api/v1/admin/analytics 200 OK (24ms)</code>
+                  {/* SEO & Moderation Modules Bar */}
+                  <div className="pt-2">
+                    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider block mb-1.5">
+                      FEATURED DASHBOARD MODULES & SEO RULES:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      <span className="px-2.5 py-1 rounded-lg bg-gray-100 text-[10px] font-bold text-gray-700 border border-gray-200">
+                        👥 Members & Visitors Moderation
+                      </span>
+                      <span className="px-2.5 py-1 rounded-lg bg-blue-50 text-[10px] font-bold text-blue-700 border border-blue-200">
+                        📰 News & Events (SEO Metadata)
+                      </span>
+                      <span className="px-2.5 py-1 rounded-lg bg-emerald-50 text-[10px] font-bold text-emerald-700 border border-emerald-200">
+                        ⚡ Power Team & Referral Logs
+                      </span>
+                      <span className="px-2.5 py-1 rounded-lg bg-purple-50 text-[10px] font-bold text-purple-700 border border-purple-200">
+                        🔍 Technical SEO & OpenGraph Rules
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Terminal Log */}
+                  <div className="p-3 bg-gray-50 rounded-xl text-[11px] text-gray-700 border border-gray-200 flex items-center justify-between">
+                    <code>&gt; GET https://rmbf-admin.web.app/dashboard 200 OK (0ms CDN)</code>
+                    <a href="https://rmbf-admin.web.app/" target="_blank" rel="noreferrer" className="text-blue-600 font-bold hover:underline">
+                      Live App ↗
+                    </a>
                   </div>
                 </div>
               ) : (
