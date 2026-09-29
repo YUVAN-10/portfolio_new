@@ -59,10 +59,10 @@ export default function DevOpsCommandCenter() {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-extrabold font-space text-[#101828] tracking-tight">
-            3D GLASS <span className="text-gradient-primary">CI/CD PIPELINE</span>
+            DEVOPS <span className="text-gradient-primary">CI/CD PIPELINE BASICS</span>
           </h2>
           <p className="text-gray-600 text-sm max-w-xl mx-auto font-inter">
-            Experience real-time containerized deployment. Click "TRIGGER DEPLOYMENT" to watch blue energy flow through the pipeline.
+            Interactive simulation of containerized deployment fundamentals. Click "TRIGGER DEPLOYMENT" to trace the automated workflow from commit to cloud hosting.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function DevOpsCommandCenter() {
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-blue-600 animate-ping" />
               <span className="font-mono text-xs text-gray-800 font-bold uppercase tracking-wider">
-                CLUSTER ID: K8S-APPLE-DATA-CENTER-01
+                PIPELINE ENV: DEVOPS-BASIC-BUILD-01
               </span>
             </div>
 

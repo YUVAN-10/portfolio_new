@@ -21,7 +21,8 @@ import {
   ArrowRight,
   ExternalLink,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Search
 } from 'lucide-react';
 
 export default function SkillsPlanet() {
@@ -73,16 +74,16 @@ export default function SkillsPlanet() {
     },
     {
       id: 'docker',
-      name: 'Docker',
+      name: 'Docker Basics',
       category: 'DevOps',
       shape: 'Docker Cube',
       icon: Box,
       color: '#0284C7',
       glow: 'rgba(2, 132, 199, 0.4)',
-      level: 85,
-      desc: 'Containerizing web applications, multi-stage builds & image optimization.',
-      projects: ['CI/CD Simulator', 'Containerized Microservices'],
-      tags: ['Containers', 'Dockerfiles', 'Multi-Stage']
+      level: 75,
+      desc: 'Containerizing web applications, writing basic Dockerfiles & container image builds.',
+      projects: ['Containerized Apps', 'Docker Basics'],
+      tags: ['Containers', 'Dockerfiles', 'Image Builds']
     },
     {
       id: 'git',
@@ -164,16 +165,29 @@ export default function SkillsPlanet() {
     },
     {
       id: 'kubernetes',
-      name: 'Kubernetes',
+      name: 'Kubernetes Basics',
       category: 'DevOps',
       shape: 'Kubernetes Ring',
       icon: Cpu,
       color: '#4F46E5',
       glow: 'rgba(79, 70, 229, 0.4)',
+      level: 70,
+      desc: 'Fundamental concepts of container orchestration, pods & deployment manifests.',
+      projects: ['Kubernetes Basics', 'DevOps Command Room'],
+      tags: ['Pods', 'Deployments', 'Cluster Basics']
+    },
+    {
+      id: 'seo',
+      name: 'SEO & Optimization',
+      category: 'Frontend',
+      shape: 'SEO Lens',
+      icon: Search,
+      color: '#059669',
+      glow: 'rgba(5, 150, 105, 0.4)',
       level: 82,
-      desc: 'Orchestrating containerized pods, ingress routing & cluster scaling.',
-      projects: ['Kubernetes Deployments', 'DevOps Command Room'],
-      tags: ['Pod Orchestration', 'Ingress', 'Auto-scaling']
+      desc: 'Meta tags, semantic HTML markup, open graph cards, page speed & Core Web Vitals optimization.',
+      projects: ['Portfolio SEO', 'Web Performance Tuning'],
+      tags: ['Meta Tags', 'Semantic HTML', 'Page Speed', 'Core Web Vitals']
     }
   ];
 

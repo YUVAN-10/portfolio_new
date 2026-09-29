@@ -152,7 +152,7 @@ export default function HeroSection({ onExploreProjects, onOpenResume }) {
 
           {/* Description */}
           <p className="text-gray-600 text-xs sm:text-lg leading-relaxed max-w-2xl font-inter">
-            Building scalable full-stack web applications and immersive user experiences using MERN Stack and DevOps.
+            Building scalable full-stack web applications and immersive user experiences using MERN Stack.
           </p>
 
           {/* Status Widgets (Internship, CGPA, Graduation) */}
@@ -424,7 +424,7 @@ export default function HeroSection({ onExploreProjects, onOpenResume }) {
               {/* Base Layer: Natural Black & White Grayscale Cutout */}
               <img
                 src="/yuvanshankar.png"
-                alt="Yuvanshankar S - MERN Stack Developer & DevOps Engineer Portfolio"
+                alt="Yuvanshankar S - MERN Stack Developer & Web Engineer Portfolio"
                 className="w-full h-full object-contain object-bottom filter grayscale drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)]"
                 loading="eager"
                 decoding="async"

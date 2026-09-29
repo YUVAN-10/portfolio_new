@@ -222,7 +222,7 @@ export default function BossBattleContact({ onOpenResume }) {
 
                 <div className="grid grid-cols-2 gap-2.5">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/YUVAN-10"
                     target="_blank"
                     rel="noreferrer"
                     onMouseEnter={() => sound.playHover()}
@@ -233,7 +233,7 @@ export default function BossBattleContact({ onOpenResume }) {
                   </a>
 
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/yuvan10"
                     target="_blank"
                     rel="noreferrer"
                     onMouseEnter={() => sound.playHover()}

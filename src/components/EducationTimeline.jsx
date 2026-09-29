@@ -50,7 +50,7 @@ export default function EducationTimeline() {
       ],
       caseStudy: {
         summary: 'Laid down strong theoretical and practical software foundations, mastering algorithmic problem solving and clean code architecture.',
-        deliverables: ['Built fundamental C++/Java algorithm suites', 'Achieved consistent academic excellence', 'Active member of Tech Coding Club']
+        deliverables: ['Learn fundamental of web development']
       }
     },
     {
@@ -75,7 +75,7 @@ export default function EducationTimeline() {
       ],
       caseStudy: {
         summary: 'Engineered high-performance web applications focused on UI micro-interactions, responsive design grids, and fast load times.',
-        deliverables: ['Designed 10+ interactive web apps', 'Built reusable UI design token systems', 'Optimized Lighthouse score to 98+']
+        deliverables: ['Developed portfolio website for an IT company']
       }
     },
     {
@@ -100,7 +100,7 @@ export default function EducationTimeline() {
       ],
       caseStudy: {
         summary: 'Constructed production-ready web apps with real-time state synchronization, encrypted authentication pipelines, and cloud database hosting.',
-        deliverables: ['Expense Tracker MERN App', 'Insurance Cost ML Predictor', 'JWT Auth Security Matrix']
+        deliverables: ['Expense Tracker MERN App']
       }
     },
     {
@@ -125,15 +125,15 @@ export default function EducationTimeline() {
       ],
       caseStudy: {
         summary: 'Contributing directly to production client codebases at PEP Software, building scalable admin tools and refining client workflows.',
-        deliverables: ['Shipped 15+ Admin Features', 'Reduced dashboard render delay by 35%', 'Auth & Firestore security rules hardening']
+        deliverables: ['Worked on 5+ Admin Features']
       }
     }
   ];
 
   // Framer Motion Scroll Progress for Desktop Timeline Line
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start 60%', 'end 80%']
+    target: containerRef,
+    offset: ['start 50%', 'end 75%']
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
@@ -199,7 +199,7 @@ export default function EducationTimeline() {
       </div>
 
       <div className="max-w-6xl mx-auto relative">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-24 space-y-4">
           <h2 className="text-4xl sm:text-6xl font-extrabold font-space text-[#101828] tracking-tight">
@@ -207,42 +207,43 @@ export default function EducationTimeline() {
           </h2>
 
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto font-inter leading-relaxed">
-            From foundational computer science studies to full-stack MERN products, DevOps cloud pipelines, and industry work.
+            From foundational computer science studies to full-stack MERN products, DevOps & SEO basics, and industry work.
           </p>
         </div>
 
         {/* ============================================================ */}
         {/* DESKTOP TIMELINE ENGINE (Lg Screens)                         */}
         {/* ============================================================ */}
-        <div ref={containerRef} className="hidden lg:block relative min-h-[1400px] py-10">
-          
-          {/* Central Liquid Glass Energy Line */}
-          <div className="absolute left-1/2 top-4 bottom-16 -translate-x-1/2 w-1.5 pointer-events-none z-0">
-            {/* Background Track Line */}
-            <div className="w-full h-full bg-gray-200/70 rounded-full" />
+        <div ref={containerRef} className="hidden lg:block min-h-[1400px] py-10">
 
-            {/* Dynamic Animated Liquid Glass Energy Fill Line */}
-            <motion.div
-              className="absolute top-0 left-0 right-0 rounded-full bg-gradient-to-b from-blue-600 via-purple-600 via-cyan-500 via-emerald-500 to-orange-500 shadow-[0_0_15px_rgba(37,99,235,0.7)]"
-              style={{
-                scaleY: smoothProgress,
-                transformOrigin: 'top center'
-              }}
-            />
+          {/* Milestone Cards Flow List & Central Track */}
+          <div className="space-y-32 relative">
 
-            {/* Traveling Energy Orb */}
-            <motion.div
-              className="absolute -left-[9px] w-6 h-6 rounded-full bg-white border-2 border-blue-600 shadow-[0_0_20px_rgba(37,99,235,0.9)] flex items-center justify-center pointer-events-none z-20"
-              style={{
-                top: useTransform(smoothProgress, [0, 1], ['0%', '100%'])
-              }}
-            >
-              <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-ping" />
-            </motion.div>
-          </div>
+            {/* Central Liquid Glass Energy Line (Stops at the final milestone) */}
+            <div className="absolute left-1/2 top-10 bottom-10 -translate-x-1/2 w-1.5 pointer-events-none z-0">
+              {/* Background Track Line */}
+              <div className="w-full h-full bg-gray-200/70 rounded-full" />
 
-          {/* Milestone Cards Flow List */}
-          <div className="space-y-32 relative z-10">
+              {/* Dynamic Animated Liquid Glass Energy Fill Line */}
+              <motion.div
+                className="absolute top-0 left-0 right-0 rounded-full bg-gradient-to-b from-blue-600 via-purple-600 via-cyan-500 via-emerald-500 to-emerald-400 shadow-[0_0_15px_rgba(37,99,235,0.7)]"
+                style={{
+                  scaleY: smoothProgress,
+                  transformOrigin: 'top center'
+                }}
+              />
+
+              {/* Traveling Energy Orb */}
+              <motion.div
+                className="absolute -left-[9px] w-6 h-6 rounded-full bg-white border-2 border-blue-600 shadow-[0_0_20px_rgba(37,99,235,0.9)] flex items-center justify-center pointer-events-none z-20"
+                style={{
+                  top: useTransform(smoothProgress, [0, 1], ['0%', '100%'])
+                }}
+              >
+                <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-ping" />
+              </motion.div>
+            </div>
+
             {milestones.map((m, idx) => {
               const Icon = m.icon;
               const isEven = idx % 2 === 0;
@@ -252,11 +253,10 @@ export default function EducationTimeline() {
                 <div
                   key={m.year}
                   id={`cinematic-milestone-${idx}`}
-                  className={`flex items-center justify-between gap-12 relative ${
-                    isEven ? 'flex-row' : 'flex-row-reverse'
-                  }`}
+                  className={`flex items-center justify-between gap-12 relative ${isEven ? 'flex-row' : 'flex-row-reverse'
+                    }`}
                 >
-                  
+
                   {/* Card Column (48% width) */}
                   <motion.div
                     initial={{
@@ -285,11 +285,10 @@ export default function EducationTimeline() {
                       onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
                       onMouseLeave={handleMouseLeave}
                       onMouseEnter={() => sound.playHover()}
-                      className={`apple-glass-panel p-8 sm:p-10 rounded-[32px] border transition-all duration-500 relative group cursor-pointer ${
-                        isActive
-                          ? 'bg-white/95 border-blue-500 shadow-[0_30px_90px_rgba(37,99,235,0.18)] -translate-y-4 opacity-100'
-                          : 'bg-white/75 border-gray-200/80 hover:border-blue-300 hover:shadow-2xl opacity-60 hover:opacity-100'
-                      }`}
+                      className={`apple-glass-panel p-8 sm:p-10 rounded-[32px] border transition-all duration-500 relative group cursor-pointer ${isActive
+                        ? 'bg-white/95 border-blue-500 shadow-[0_30px_90px_rgba(37,99,235,0.18)] -translate-y-4 opacity-100'
+                        : 'bg-white/75 border-gray-200/80 hover:border-blue-300 hover:shadow-2xl opacity-60 hover:opacity-100'
+                        }`}
                       style={{
                         transform: isActive
                           ? `perspective(1000px) rotateX(${mousePos.y * -4}deg) rotateY(${mousePos.x * 4}deg) translateY(-16px)`
@@ -368,11 +367,10 @@ export default function EducationTimeline() {
                   <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 12 }}
-                      className={`w-16 h-16 rounded-2xl bg-white border-2 p-1.5 shadow-xl flex items-center justify-center transition-all duration-500 cursor-pointer ${
-                        isActive
-                          ? 'scale-125 border-blue-600 shadow-[0_0_35px_rgba(37,99,235,0.45)]'
-                          : 'border-gray-200'
-                      }`}
+                      className={`w-16 h-16 rounded-2xl bg-white border-2 p-1.5 shadow-xl flex items-center justify-center transition-all duration-500 cursor-pointer ${isActive
+                        ? 'scale-125 border-blue-600 shadow-[0_0_35px_rgba(37,99,235,0.45)]'
+                        : 'border-gray-200'
+                        }`}
                       style={{ borderColor: isActive ? m.color : undefined }}
                     >
                       <div
@@ -380,9 +378,8 @@ export default function EducationTimeline() {
                         style={{ backgroundColor: m.bgTint }}
                       >
                         <Icon
-                          className={`w-7 h-7 transition-all duration-300 ${
-                            idx === 1 ? 'animate-[spin_10s_linear_infinite]' : 'animate-pulse'
-                          }`}
+                          className={`w-7 h-7 transition-all duration-300 ${idx === 1 ? 'animate-[spin_10s_linear_infinite]' : 'animate-pulse'
+                            }`}
                           style={{ color: m.color }}
                         />
                       </div>
@@ -414,7 +411,7 @@ export default function EducationTimeline() {
         {/* MOBILE FULLSCREEN STORY CARDS ENGINE (Sm/Md Screens)          */}
         {/* ============================================================ */}
         <div className="block lg:hidden relative space-y-12">
-          
+
           {/* Sticky Mobile Year Pill Top Center */}
           <div className="sticky top-20 z-30 flex justify-center mb-6">
             <div className="apple-glass-panel px-5 py-2 rounded-full border border-white/90 shadow-xl bg-white/90 flex items-center gap-3 backdrop-blur-md">
@@ -451,11 +448,10 @@ export default function EducationTimeline() {
                       sound.playClick();
                       setSelectedMilestone(m);
                     }}
-                    className={`apple-glass-panel p-6 sm:p-8 rounded-[28px] border transition-all duration-300 relative ${
-                      isActive
-                        ? 'bg-white border-blue-500 shadow-[0_20px_60px_rgba(37,99,235,0.18)] scale-[1.01]'
-                        : 'bg-white/80 border-gray-200 opacity-80'
-                    }`}
+                    className={`apple-glass-panel p-6 sm:p-8 rounded-[28px] border transition-all duration-300 relative ${isActive
+                      ? 'bg-white border-blue-500 shadow-[0_20px_60px_rgba(37,99,235,0.18)] scale-[1.01]'
+                      : 'bg-white/80 border-gray-200 opacity-80'
+                      }`}
                     style={{
                       borderColor: isActive ? m.color : undefined
                     }}
@@ -544,15 +540,20 @@ export default function EducationTimeline() {
 
               {/* Modal Header */}
               <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center text-white font-mono font-bold text-lg shadow-md"
-                  style={{ backgroundColor: selectedMilestone.color }}
-                >
-                  {selectedMilestone.year}
-                </div>
+                {(() => {
+                  const ModalIcon = selectedMilestone.icon;
+                  return (
+                    <div
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-md flex-shrink-0"
+                      style={{ backgroundColor: selectedMilestone.color }}
+                    >
+                      <ModalIcon className="w-6 h-6 text-white" />
+                    </div>
+                  );
+                })()}
                 <div>
                   <span className="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider block">
-                    {selectedMilestone.badge}
+                    {selectedMilestone.year} • {selectedMilestone.badge}
                   </span>
                   <h3 className="text-2xl font-space font-extrabold text-gray-900">
                     {selectedMilestone.title}
@@ -564,7 +565,7 @@ export default function EducationTimeline() {
               <p className="text-xs font-mono font-bold text-gray-500 mb-4">
                 {selectedMilestone.subtitle}
               </p>
-              
+
               <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200/80 mb-6">
                 <p className="text-sm font-inter text-gray-700 leading-relaxed">
                   {selectedMilestone.caseStudy.summary}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { sound } from '../utils/audioSynth';
-import { Rocket, Sparkles, ExternalLink, GitBranch, DollarSign, Stethoscope, Cpu, ArrowRight, Layers, Database, ShieldCheck, Server, Laptop, Smartphone, FileText, CheckCircle2, Code2, X, Terminal, Workflow } from 'lucide-react';
+import { Rocket, Sparkles, ExternalLink, GitBranch, DollarSign, Stethoscope, Cpu, ArrowRight, Layers, Database, ShieldCheck, Server, Laptop, Smartphone, FileText, CheckCircle2, Code2, X, Terminal, Workflow, Globe } from 'lucide-react';
 
 export default function ProjectsUniverse() {
   const [activeCaseStudyModal, setActiveCaseStudyModal] = useState(null);
@@ -87,7 +87,6 @@ export default function ProjectsUniverse() {
       problemSolved: 'Poor posture during long desk hours causes chronic spinal stress. This wearable IoT device continuously measures spinal angle inclinations and provides immediate feedback to form healthy ergonomic habits.',
       features: [
         'MPU6050 6-Axis Gyroscope & Accelerometer Calibration',
-        'Real-time Angle Threshold Slump Sensor',
         'Instant Piezoelectric Buzzer Alert Trigger',
         'Low-Power Microcontroller Hardware Firmware'
       ],
@@ -107,36 +106,68 @@ export default function ProjectsUniverse() {
       ]
     },
     {
-      id: 'matrimony-admin',
-      name: 'Matrimony & CRM Admin Dashboard',
-      headerLabel: 'PROJECT CASE STUDY',
-      ctaLabel: 'Explore Admin Dashboard ↗',
-      theme: 'Enterprise Full Stack Dashboard',
+      id: 'rmbf-admin',
+      name: 'RMBF Rotary Club Admin Panel',
+      headerLabel: 'PRODUCTION CLIENT ADMIN PANEL',
+      ctaLabel: 'Visit Live Admin Panel ↗',
+      liveUrl: 'https://rmbf-admin.web.app/',
+      theme: 'Rotary Club Enterprise Dashboard',
       date: 'February 2026',
       bgColor: '#FDF5F8',
-      tech: ['React.js', 'Firebase Firestore', 'Cloud Storage', 'Tailwind', 'REST'],
+      tech: ['React.js', 'Firebase Firestore', 'Firebase Hosting', 'Tailwind CSS'],
       icon: Server,
-      summary: 'Enterprise-grade administrative management system for member verification, profile moderation, and telemetry reporting.',
-      problemSolved: 'Handling high-volume user verifications and media approvals manually leads to administrative bottlenecks. This dashboard streamlines profile workflows with Firestore real-time synchronization.',
+      summary: 'Administrative management system engineered for RMBF Rotary Club with real-time member verifications, Rotary events moderation, and Firebase cloud hosting.',
+      problemSolved: 'Managing high-volume Rotary Club member directories, event registrations, and media verifications manually leads to administrative delays. This portal provides real-time Firestore sync and role-based moderation.',
       features: [
-        'Real-time Member Verification & Document Approval Portal',
-        'Firebase Storage Media Inspection & Audit Logs',
-        'Role-Based Admin Access Control (RBAC)',
-        'Data Export & System Telemetry Reports'
+        'Real-Time Member Verification & Directory Management',
+        'Rotary Club Events & Registration Moderation Portal',
+        'Firebase Firestore Real-time Listeners & Security Rules',
+        'Fast Production Deployment on Firebase Hosting'
       ],
       techStack: [
         'Frontend: React 18, Vite, Tailwind CSS',
-        'Backend Service: Firebase Firestore & Auth',
-        'Storage: Google Cloud Storage for Media',
-        'State Management: React Context & Custom Hooks'
+        'Backend & DB: Firebase Firestore & Authentication',
+        'Hosting & CDN: Firebase Hosting Deployment'
       ],
-      databaseFlow: 'Admin Action -> Firestore Security Rules -> Document Transaction -> Real-time Listener Dispatch -> UI State Update',
-      apiFlow: 'GET /members (Real-time Snapshot) → PUT /members/:id/verify → POST /audit-logs',
-      whatILearned: 'Architected scalable Firebase security rules, real-time snapshot synchronization, and optimized bulk data table rendering in React.',
+      databaseFlow: 'Rotary Admin Portal -> Firebase Auth Token -> Firestore Security Rules -> Real-time Document Listener -> Instant UI Update',
+      apiFlow: 'GET /rmbf-members (Firestore Snapshot) → UPDATE /member-status → DEPLOY Firebase Hosting',
+      whatILearned: 'Engineered production client admin panel with Firebase Firestore real-time sync, role-based security rules, and seamless Firebase Hosting CI/CD deployment.',
       mockupScreens: [
-        { title: 'Admin Master Control Center', badge: 'Management' },
-        { title: 'Member Verification Audit Panel', badge: 'Security' },
-        { title: 'Analytics & Activity Stream', badge: 'Telemetry' }
+        { title: 'RMBF Rotary Admin Control Center', badge: 'Rotary Portal' },
+        { title: 'Member Verification & Moderation', badge: 'Firestore Sync' },
+        { title: 'Firebase Hosting Production Telemetry', badge: 'Firebase' }
+      ]
+    },
+    {
+      id: 'a1-and-dal',
+      name: 'A1anddal Commercial Website',
+      headerLabel: 'CLIENT STATIC WEBSITE',
+      ctaLabel: 'Visit Live Website ↗',
+      liveUrl: 'https://a1anddal.com/',
+      theme: 'Static Web Design & SEO',
+      date: 'Aug 2026',
+      bgColor: '#F5FAF8',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Grid', 'SEO'],
+      icon: Globe,
+      summary: 'Designed and developed a modern, high-performance commercial static website for A1anddal featuring responsive layouts, fast asset delivery, and SEO optimization.',
+      problemSolved: 'Delivering a clean, professional web showcase with instant load times, seamless cross-device mobile responsiveness, and search engine discoverability.',
+      features: [
+        'Modern Responsive UI Architecture & Grid System',
+        'Search Engine Optimization (SEO) & Semantic Markup',
+        'Fast Loading Speeds & Cross-Browser Compatibility'
+      ],
+      techStack: [
+        'Core Engine: HTML5, CSS3, ES6+ JavaScript',
+        'Design: Custom Responsive Layout, Glassmorphism, Micro-interactions',
+        'Optimization: OpenGraph Cards, Meta Tags & Fast Asset Loading'
+      ],
+      databaseFlow: 'Static Asset CDN -> Browser HTTP GET -> Fast DOM Render (0ms Server Delay)',
+      apiFlow: 'Client Browser → HTTP GET / → HTML5 DOM Parse → Render CSS/JS Assets',
+      whatILearned: 'Mastered commercial website design, responsive grid breakpoints, SEO optimization, and browser performance auditing.',
+      mockupScreens: [
+        { title: 'A1anddal Homepage Showcase', badge: 'Live Website' },
+        { title: 'Responsive Mobile Layout', badge: 'Mobile Grid' },
+        { title: 'SEO & Performance Suite', badge: 'Lighthouse' }
       ]
     }
   ];
@@ -144,7 +175,7 @@ export default function ProjectsUniverse() {
   return (
     <section id="projects" className="py-24 relative z-10 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-extrabold font-space text-[#101828] tracking-tight">
@@ -171,10 +202,10 @@ export default function ProjectsUniverse() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-blue-100/30 pointer-events-none z-0" />
 
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-                  
+
                   {/* Left Column: Case Study Metadata & Descriptions */}
                   <div className="lg:col-span-6 space-y-5">
-                    
+
                     {/* Header Label Pill */}
                     <div className="flex items-center gap-3">
                       <span className="px-3.5 py-1 rounded-full bg-white/90 text-[11px] font-mono font-bold text-blue-600 border border-blue-200/80 shadow-sm uppercase tracking-wider">
@@ -204,6 +235,20 @@ export default function ProjectsUniverse() {
 
                     {/* Action Buttons: Primary Liquid Glass Case Study & Secondary Architecture */}
                     <div className="flex flex-wrap gap-3 pt-3">
+                      {proj.liveUrl ? (
+                        <a
+                          href={proj.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => sound.playClick()}
+                          onMouseEnter={() => sound.playHover()}
+                          className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 text-white font-space font-bold text-xs sm:text-sm tracking-wide shadow-[0_15px_35px_rgba(16,185,129,0.3)] transition-all hover:scale-105 flex items-center gap-2 group/btn cursor-pointer"
+                        >
+                          <span>{proj.ctaLabel}</span>
+                          <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
+                      ) : null}
+
                       <button
                         onClick={() => {
                           sound.playWhoosh();
@@ -211,9 +256,9 @@ export default function ProjectsUniverse() {
                           setActiveTab('overview');
                         }}
                         onMouseEnter={() => sound.playHover()}
-                        className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white font-space font-bold text-xs sm:text-sm tracking-wide shadow-[0_15px_35px_rgba(37,99,235,0.3)] transition-all hover:scale-105 flex items-center gap-2 group/btn cursor-pointer"
+                        className={`px-6 py-3.5 rounded-2xl ${proj.liveUrl ? 'apple-glass-card text-gray-800 border border-gray-200 hover:border-blue-500' : 'bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white shadow-[0_15px_35px_rgba(37,99,235,0.3)]'} font-space font-bold text-xs sm:text-sm tracking-wide transition-all hover:scale-105 flex items-center gap-2 group/btn cursor-pointer`}
                       >
-                        <span>{proj.ctaLabel}</span>
+                        <span>{proj.liveUrl ? 'View Case Study ↗' : proj.ctaLabel}</span>
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
                       </button>
 
@@ -235,9 +280,9 @@ export default function ProjectsUniverse() {
 
                   {/* Right Column: 3D Laptop / Phone Mockup Screenshot Preview Carousel */}
                   <div className="lg:col-span-6 flex justify-center items-center">
-                    
+
                     <div className="w-full max-w-md apple-glass-card rounded-[28px] p-4 sm:p-6 border border-gray-200/90 bg-white/90 shadow-xl relative overflow-hidden group/mockup">
-                      
+
                       {/* Top Laptop Header Bar */}
                       <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100">
                         <div className="flex items-center gap-1.5">
@@ -252,7 +297,7 @@ export default function ProjectsUniverse() {
 
                       {/* Mockup Screen Content Display */}
                       <div className="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-5 text-white min-h-[220px] flex flex-col justify-between relative overflow-hidden shadow-inner border border-slate-800">
-                        
+
                         <div className="flex justify-between items-start z-10">
                           <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-md text-blue-400 border border-white/10">
                             <Icon className="w-6 h-6" />
@@ -265,7 +310,7 @@ export default function ProjectsUniverse() {
                         {/* Interactive Preview Cards Stack inside Laptop Mockup */}
                         <div className="space-y-2 my-4 z-10">
                           {proj.mockupScreens.map((screen, sIdx) => (
-                            <div 
+                            <div
                               key={sIdx}
                               className="p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-between text-xs font-mono transition-transform duration-300 group-hover/mockup:translate-x-1"
                             >
@@ -304,7 +349,7 @@ export default function ProjectsUniverse() {
         {activeCaseStudyModal && (
           <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn">
             <div className="apple-glass-panel rounded-[32px] p-6 sm:p-10 border border-white/90 max-w-4xl w-full relative shadow-2xl bg-white/95 my-6 max-h-[90vh] overflow-y-auto">
-              
+
               {/* Close Button */}
               <button
                 onClick={() => {
@@ -344,11 +389,10 @@ export default function ProjectsUniverse() {
                       sound.playClick();
                       setActiveTab(tab.id);
                     }}
-                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
-                      activeTab === tab.id
-                        ? 'bg-blue-600 text-white shadow-md'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${activeTab === tab.id
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
                   >
                     {tab.label}
                   </button>
@@ -357,7 +401,7 @@ export default function ProjectsUniverse() {
 
               {/* Tab Content Display */}
               <div className="space-y-6 min-h-[250px]">
-                
+
                 {/* Tab 1: Overview */}
                 {activeTab === 'overview' && (
                   <div className="space-y-4 animate-fadeIn">

@@ -24,11 +24,11 @@ export default function AboutMission() {
     },
     {
       title: 'Tech Philosophy',
-      subtitle: 'Full Stack & Cloud',
+      subtitle: 'Full Stack, DevOps & SEO',
       icon: Cpu,
       content:
-        'Combining the agility of MERN Stack and Firebase with the reliability of DevOps container pipelines (Docker & Kubernetes) and Cloud infrastructure.',
-      highlights: ['MERN Stack & Firebase', 'DevOps & CI/CD Pipelines', 'Cloud & AI Explorations']
+        'Combining the agility of MERN Stack and Firebase with DevOps containerization basics (Docker & GitHub Actions) and SEO web optimization.',
+      highlights: ['MERN Stack & Firebase', 'DevOps & Container Basics', 'SEO & Web Optimization']
     }
   ];
 
